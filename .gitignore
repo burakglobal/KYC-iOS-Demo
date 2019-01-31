@@ -1,3 +1,6 @@
+## Multiple VCS support
+.git_*
+
 ## Build generated
 build/
 DerivedData

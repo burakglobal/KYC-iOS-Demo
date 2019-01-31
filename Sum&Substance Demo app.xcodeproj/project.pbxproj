@@ -18,12 +18,12 @@
 		611ACD45A9C5EC85412C1AAC /* SelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC52463ACA970C3E18E25 /* SelectionVC.m */; };
 		611ACE49274030E5C7232394 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACB9643D884858EB22ABF /* Storage.m */; };
 		611ACFBD5D602AC6C36E231E /* UIViewController+StoryboardInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACABBA3E2B3F9F53381FB /* UIViewController+StoryboardInstance.m */; };
+		9F506721D58ED6C6C4448A4D /* Pods_Sum_Substance_Demo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528A08344E01A63DA03BABA3 /* Pods_Sum_Substance_Demo_app.framework */; };
 		DE6830BD21E7820F00ABFBCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6830BC21E7820F00ABFBCB /* AppDelegate.m */; };
 		DE6830C821E7821100ABFBCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6830C621E7821100ABFBCB /* LaunchScreen.storyboard */; };
 		DE6830CB21E7821100ABFBCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6830CA21E7821100ABFBCB /* main.m */; };
 		DEE75A2F21E78EE300B09FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE75A2E21E78EE300B09FD5 /* Main.storyboard */; };
 		DEE75A3121E7909500B09FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE75A3021E7909500B09FD5 /* Assets.xcassets */; };
-		FB33EDE4F8A9D4C135FA85C8 /* Pods_Sum_Substance_Demo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD60AA2ADDB62635A593C2C /* Pods_Sum_Substance_Demo_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		39CB4C2E68B4F024C7E69FA9 /* Pods-Sum&Substance Demo app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sum&Substance Demo app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sum&Substance Demo app/Pods-Sum&Substance Demo app.debug.xcconfig"; sourceTree = "<group>"; };
+		528A08344E01A63DA03BABA3 /* Pods_Sum_Substance_Demo_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sum_Substance_Demo_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611AC1266BC24FE95359C84D /* UIColor+AdditionalColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AdditionalColors.h"; sourceTree = "<group>"; };
 		611AC160A38D48AF7A2FE9EF /* Coordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinator.m; sourceTree = "<group>"; };
 		611AC1B36F480A5750A475C5 /* RoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundTextField.m; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		611ACF7DF6AC03054F34DE80 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
 		611ACFC98A12A33222C7B801 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		611ACFD18602DBF6B20261D1 /* Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
-		BCD60AA2ADDB62635A593C2C /* Pods_Sum_Substance_Demo_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sum_Substance_Demo_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6830B821E7820F00ABFBCB /* Sum&Substance Demo app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sum&Substance Demo app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6830BB21E7820F00ABFBCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE6830BC21E7820F00ABFBCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB33EDE4F8A9D4C135FA85C8 /* Pods_Sum_Substance_Demo_app.framework in Frameworks */,
+				9F506721D58ED6C6C4448A4D /* Pods_Sum_Substance_Demo_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +100,7 @@
 		55507645328777899DA8E01E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCD60AA2ADDB62635A593C2C /* Pods_Sum_Substance_Demo_app.framework */,
+				528A08344E01A63DA03BABA3 /* Pods_Sum_Substance_Demo_app.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -16,8 +16,10 @@
 
 
 static NSString *const loginApiLink = @"https://api.sumsub.com";
-static NSString *const kycSocketLink = @"wss://ss.spbdev.net:8443/api/ws";
-static NSString *const kycRestLink = @"https://ss.spbdev.net:8443/";
+static NSString *const kycBaseUrl = @"msdk.sumsub.com";
+
+// static NSString *const loginApiLink = @"https://test-api.sumsub.com";
+// static NSString *const kycBaseUrl = @"test-msdk.sumsub.com";
 
 static NSString *const restLoginRequestPath = @"/resources/auth/login";
 static NSString *const restCreateApplicantRequestPath = @"/resources/applicants";
@@ -210,8 +212,7 @@ static Coordinator *instance;
                                          withToken:token
                                             locale:locale
                                       supportEmail:@"support@sumsub.com"
-                                         socketUrl:kycSocketLink
-                                           restUrl:kycRestLink];
+                                           baseUrl:kycBaseUrl];
 
     [engine connectWithExpirationHandler:^{
         /// Handle token expiration
