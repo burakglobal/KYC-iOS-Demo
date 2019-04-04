@@ -12,6 +12,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.clipsToBounds = true;
+    self.font = [UIFont systemFontOfSize:18 weight:UIFontWeightLight];
 }
 
 // Placeholder position

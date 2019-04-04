@@ -1,5 +1,6 @@
 ## Multiple VCS support
 .git_*
+*.podspec
 
 ## Build generated
 build/

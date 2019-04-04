@@ -12,14 +12,17 @@
 #import "SelectionVC.h"
 #import "LoadingVC.h"
 #import <SumSubstanceKYC/SumSubstanceKYC.h>
+#import <SumSubstanceKYC/KYCColorConfig.h>
+#import <SumSubstanceKYC/KYCImageConfig.h>
 #import "UIColor+AdditionalColors.h"
 
+/// Production environment
+// static NSString *const loginApiLink = @"https://api.sumsub.com";
+// static NSString *const kycBaseUrl = @"msdk.sumsub.com";
 
-static NSString *const loginApiLink = @"https://api.sumsub.com";
-static NSString *const kycBaseUrl = @"msdk.sumsub.com";
-
-// static NSString *const loginApiLink = @"https://test-api.sumsub.com";
-// static NSString *const kycBaseUrl = @"test-msdk.sumsub.com";
+/// Testing environment
+static NSString *const loginApiLink = @"https://test-api.sumsub.com";
+static NSString *const kycBaseUrl = @"test-msdk2.sumsub.com";
 
 static NSString *const restLoginRequestPath = @"/resources/auth/login";
 static NSString *const restCreateApplicantRequestPath = @"/resources/applicants";
@@ -205,6 +208,7 @@ static Coordinator *instance;
 }
 
 - (void)startKYC {
+    setenv("SS_DEBUG", "true", 1);
     NSString *applicantID = [Storage.instance objectForKey:udApplicant];
     NSString *locale = [Storage.instance objectForKey:udLocale];
     NSString *token = [Storage.instance objectForKey:udToken];
@@ -212,7 +216,9 @@ static Coordinator *instance;
                                          withToken:token
                                             locale:locale
                                       supportEmail:@"support@sumsub.com"
-                                           baseUrl:kycBaseUrl];
+                                           baseUrl:kycBaseUrl
+                                       colorConfig:nil
+                                       imageConfig:nil];
 
     [engine connectWithExpirationHandler:^{
         /// Handle token expiration
