@@ -1,6 +1,8 @@
 ## Multiple VCS support
 .git_*
 *.podspec
+.DS_Store
+Podfile.lock
 
 ## Build generated
 build/

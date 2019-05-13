@@ -218,8 +218,6 @@
 				TargetAttributes = {
 					DE6830B721E7820F00ABFBCB = {
 						CreatedOnToolsVersion = 10.0;
-						DevelopmentTeam = N7B9Y8WYA7;
-						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -478,8 +476,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N7B9Y8WYA7;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M257Z2B9X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,10 +492,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sumsub.demo-fat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumsub.SSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0c1bc528-976a-47e9-ade6-c4e0ed6ac398";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sumsub.demo-fat";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -507,9 +504,9 @@
 			baseConfigurationReference = 6EA9CB8AD1C309E422BBE745 /* Pods-SSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N7B9Y8WYA7;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M257Z2B9X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,10 +521,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sumsub.demo-fat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumsub.SSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0c1bc528-976a-47e9-ade6-c4e0ed6ac398";
-				PROVISIONING_PROFILE_SPECIFIER = "match InHouse com.sumsub.demo-fat";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

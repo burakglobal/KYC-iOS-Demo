@@ -17,12 +17,12 @@
 #import "UIColor+AdditionalColors.h"
 
 /// Production environment
-// static NSString *const loginApiLink = @"https://api.sumsub.com";
-// static NSString *const kycBaseUrl = @"msdk.sumsub.com";
+static NSString *const loginApiLink = @"https://api.sumsub.com";
+static NSString *const kycBaseUrl = @"msdk.sumsub.com";
 
 /// Testing environment
-static NSString *const loginApiLink = @"https://test-api.sumsub.com";
-static NSString *const kycBaseUrl = @"test-msdk2.sumsub.com";
+//static NSString *const loginApiLink = @"https://test-api.sumsub.com";
+//static NSString *const kycBaseUrl = @"test-msdk2.sumsub.com";
 
 static NSString *const restLoginRequestPath = @"/resources/auth/login";
 static NSString *const restCreateApplicantRequestPath = @"/resources/applicants";
