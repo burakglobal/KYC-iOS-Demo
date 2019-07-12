@@ -5,9 +5,7 @@
 
 #import "RoundTextField.h"
 
-
 @implementation RoundTextField
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -19,14 +17,12 @@
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect rect = [super textRectForBounds:bounds];
     return [self insetForRect:rect];
-
 }
 
 // Text position
 - (CGRect)editingRectForBounds:(CGRect)bounds {
     CGRect rect = [super editingRectForBounds:bounds];
     return [self insetForRect:rect];
-
 }
 
 - (CGRect)insetForRect:(CGRect)rect {
@@ -37,7 +33,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.layer.cornerRadius = self.frame.size.height / 2;
-
 }
 
 @end

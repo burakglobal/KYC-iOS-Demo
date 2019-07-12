@@ -9,4 +9,5 @@
 @interface UIViewController (StoryboardInstance)
 
 + (instancetype)createInstanceFromStoryboard;
+
 @end

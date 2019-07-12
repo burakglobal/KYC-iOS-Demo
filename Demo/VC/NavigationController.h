@@ -6,7 +6,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
-@interface Navigation : UINavigationController
+@interface NavigationController : UINavigationController
 
 @end

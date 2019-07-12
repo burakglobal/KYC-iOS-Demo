@@ -5,8 +5,8 @@
 
 #import "LoadingVC.h"
 
-
 @implementation LoadingVC
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = true;
@@ -21,6 +21,5 @@
     [super viewDidDisappear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = true;
 }
-
 
 @end

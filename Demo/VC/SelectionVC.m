@@ -11,6 +11,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface SelectionVC () <UITextFieldDelegate>
+
 @property(strong, nonatomic) IBOutlet UILabel *promoLabel;
 @property(strong, nonatomic) IBOutlet RoundButton *createNewButton;
 @property(strong, nonatomic) IBOutlet RoundButton *existingButton;
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupPromoLabel];
 
     RAC(self.existingButton, enabled) =
@@ -30,9 +32,12 @@
             }];
 
     self.localeTextField.delegate = self;
+    
     [[[Storage.instance rac_channelTerminalForKey:udLocale] map:^NSString *(NSString *li) {
+        
         NSLocale *locale = [NSLocale localeWithLocaleIdentifier:li];
         return [[locale displayNameForKey:NSLocaleIdentifier value:locale.localeIdentifier] componentsSeparatedByString:@" "][0].capitalizedString;
+        
     }] subscribe:self.localeTextField.rac_newTextChannel];
 }
 
@@ -42,7 +47,9 @@
 }
 
 - (IBAction)selectLanguage {
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil
+                                                                        message:nil
+                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
     [self addActionIn:controller forLocale:@"en_US"];
     [self addActionIn:controller forLocale:@"ru_RU"];
     // [self addActionIn:controller forLocale:@"de_DE"];
@@ -51,20 +58,24 @@
 
 - (void)addActionIn:(UIAlertController *)controller forLocale:(NSString *const)localeKey {
     NSLocale *locale = [NSLocale localeWithLocaleIdentifier:localeKey];
+    NSString *title = [[locale displayNameForKey:NSLocaleIdentifier value:locale.localeIdentifier]
+                       componentsSeparatedByString:@" "][0].capitalizedString;
+    
     UIAlertAction *action = [UIAlertAction
-            actionWithTitle:[[locale displayNameForKey:NSLocaleIdentifier value:locale.localeIdentifier] componentsSeparatedByString:@" "][0].capitalizedString
-                      style:UIAlertActionStyleDefault
-                    handler:^(UIAlertAction *action) {
-                        [controller dismissViewControllerAnimated:YES completion:nil];
-                        [Storage.instance setObject:localeKey forKey:udLocale];
-                    }];
+                             actionWithTitle:title
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction *action) {
+                                 [controller dismissViewControllerAnimated:YES completion:nil];
+                                 [Storage.instance setObject:localeKey forKey:udLocale];
+                             }];
+    
     [controller addAction:action];
 }
 
 - (void)setupPromoLabel {
     NSMutableAttributedString *string = [NSMutableAttributedString.alloc
-            initWithString:@"The fastest way to onboard your customers"
-                attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:36 weight:UIFontWeightLight]}];
+                                         initWithString:@"The fastest way to onboard your customers"
+                                         attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:36 weight:UIFontWeightLight]}];
     [string setAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:36 weight:UIFontWeightMedium]}
                     range:[string.string rangeOfString:@"fastest"]];
     self.promoLabel.attributedText = string;
@@ -77,4 +88,5 @@
 - (IBAction)continueCheck {
     [Coordinator.instance continueCheck];
 }
+
 @end

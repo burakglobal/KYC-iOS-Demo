@@ -5,20 +5,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class RKObjectManager;
 @class UINavigationController;
-@class LoginVC;
-@class SelectionVC;
-
 
 @interface Coordinator : NSObject
+
 + (instancetype)instance;
 
-- (void)loginWith:(NSString *)login password:(NSString *)password failureAnimation:(void (^)())animation;
+- (void)loginWith:(NSString *)login password:(NSString *)password failureAnimation:(void (^)(void))animation;
 
 + (void)createInstanceWith:(UINavigationController *const)controller;
 
 - (void)startNewCheck;
 
 - (void)continueCheck;
+
 @end

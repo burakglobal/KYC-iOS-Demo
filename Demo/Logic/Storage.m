@@ -5,7 +5,6 @@
 
 #import "Storage.h"
 
-
 @implementation Storage
 
 + (instancetype)instance {

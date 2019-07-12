@@ -7,5 +7,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (AdditionalColors)
+
 + (instancetype)duskBlue;
+
 @end

@@ -13,5 +13,7 @@ static NSString *const udPassword = @"password";
 static NSString *const udApplicant = @"applicant";
 
 @interface Storage : NSUserDefaults
+
 + (instancetype)instance;
+
 @end

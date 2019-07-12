@@ -4,6 +4,9 @@
 .DS_Store
 Podfile.lock
 
+## Env
+Env
+
 ## Build generated
 build/
 DerivedData

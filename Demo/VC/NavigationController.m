@@ -3,15 +3,12 @@
 // Copyright (c) 2019 Sum & Substance. All rights reserved.
 //
 
-#import "Navigation.h"
+#import "NavigationController.h"
 
-
-@implementation Navigation {
-
-}
-
+@implementation NavigationController
 
 - (BOOL)shouldAutorotate {
     return NO;
 }
+
 @end

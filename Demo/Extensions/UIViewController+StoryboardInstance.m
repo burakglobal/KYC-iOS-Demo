@@ -5,9 +5,11 @@
 
 #import "UIViewController+StoryboardInstance.h"
 
-
 @implementation UIViewController (StoryboardInstance)
+
 + (instancetype)createInstanceFromStoryboard {
-    return [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass(self.class)];
+    return [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+            instantiateViewControllerWithIdentifier:NSStringFromClass(self.class)];
 }
+
 @end

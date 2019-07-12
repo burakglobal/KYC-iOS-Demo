@@ -14,7 +14,7 @@
 		611AC49EB7A5B333D88A3E97 /* LoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC672F35F964FB6591267 /* LoadingVC.m */; };
 		611AC531D0CA0331B5DD7A51 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACA7A14D015F769F5629B /* LoginVC.m */; };
 		611AC738B35FBB34959C77CC /* UIColor+AdditionalColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC46F0662393E1CD28A0C /* UIColor+AdditionalColors.m */; };
-		611AC9CF012F2464D08BA822 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC8D9432F9A3047406093 /* Navigation.m */; };
+		611AC9CF012F2464D08BA822 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC8D9432F9A3047406093 /* NavigationController.m */; };
 		611ACC0A23F57943778C18E1 /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC3AB1B9DD6480759C40E /* RoundButton.m */; };
 		611ACD45A9C5EC85412C1AAC /* SelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC52463ACA970C3E18E25 /* SelectionVC.m */; };
 		611ACE49274030E5C7232394 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACB9643D884858EB22ABF /* Storage.m */; };
@@ -53,7 +53,7 @@
 		611AC5A7EE70762463EA2A4F /* UIView+shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shake.m"; sourceTree = "<group>"; };
 		611AC5E08B6F6EB52AF45C05 /* SelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionVC.h; sourceTree = "<group>"; };
 		611AC672F35F964FB6591267 /* LoadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingVC.m; sourceTree = "<group>"; };
-		611AC8D9432F9A3047406093 /* Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
+		611AC8D9432F9A3047406093 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		611ACA7A14D015F769F5629B /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		611ACABBA3E2B3F9F53381FB /* UIViewController+StoryboardInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+StoryboardInstance.m"; sourceTree = "<group>"; };
 		611ACB9643D884858EB22ABF /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
@@ -61,19 +61,20 @@
 		611ACD8968ED59291D86B023 /* RoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundTextField.h; sourceTree = "<group>"; };
 		611ACF7DF6AC03054F34DE80 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
 		611ACFC98A12A33222C7B801 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		611ACFD18602DBF6B20261D1 /* Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
+		611ACFD18602DBF6B20261D1 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		6EA9CB8AD1C309E422BBE745 /* Pods-SSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDemo.release.xcconfig"; path = "Target Support Files/Pods-SSDemo/Pods-SSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8D7B5198A0F24474ADA660CA /* Pods-SSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDemo.debug.xcconfig"; path = "Target Support Files/Pods-SSDemo/Pods-SSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C5F2D655089EE2B3FB305EB6 /* Pods_SSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8464B1622D8ABCD007A6506 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D84F614A22AEA209001CCFB5 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		DE6830B821E7820F00ABFBCB /* SSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6830BB21E7820F00ABFBCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE6830BC21E7820F00ABFBCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DE6830BE21E7820F00ABFBCB /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		DE6830C721E7821100ABFBCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE6830C921E7821100ABFBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE6830CA21E7821100ABFBCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEE75A2E21E78EE300B09FD5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DEE75A3021E7909500B09FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		DEE75A3021E7909500B09FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Demo/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,14 +92,15 @@
 		611AC715ACBED069930E498C /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				611ACA7A14D015F769F5629B /* LoginVC.m */,
+				D84F614E22AED7B0001CCFB5 /* Subviews */,
+				611ACFD18602DBF6B20261D1 /* NavigationController.h */,
+				611AC8D9432F9A3047406093 /* NavigationController.m */,
 				611ACFC98A12A33222C7B801 /* LoginVC.h */,
-				611AC52463ACA970C3E18E25 /* SelectionVC.m */,
+				611ACA7A14D015F769F5629B /* LoginVC.m */,
 				611AC5E08B6F6EB52AF45C05 /* SelectionVC.h */,
-				611AC672F35F964FB6591267 /* LoadingVC.m */,
+				611AC52463ACA970C3E18E25 /* SelectionVC.m */,
 				611ACF7DF6AC03054F34DE80 /* LoadingVC.h */,
-				611AC8D9432F9A3047406093 /* Navigation.m */,
-				611ACFD18602DBF6B20261D1 /* Navigation.h */,
+				611AC672F35F964FB6591267 /* LoadingVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -107,10 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				611AC1266BC24FE95359C84D /* UIColor+AdditionalColors.h */,
-				611AC40D02C619AFF0A444E5 /* UIView+shake.h */,
 				611AC46F0662393E1CD28A0C /* UIColor+AdditionalColors.m */,
-				611ACD686890300E540E3179 /* UIViewController+StoryboardInstance.h */,
+				611AC40D02C619AFF0A444E5 /* UIView+shake.h */,
 				611AC5A7EE70762463EA2A4F /* UIView+shake.m */,
+				611ACD686890300E540E3179 /* UIViewController+StoryboardInstance.h */,
 				611ACABBA3E2B3F9F53381FB /* UIViewController+StoryboardInstance.m */,
 			);
 			path = Extensions;
@@ -119,10 +121,10 @@
 		611ACE8A63CA32B3D4AB82CD /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				611AC160A38D48AF7A2FE9EF /* Coordinator.m */,
 				611AC4CEAD15355F4B6D31FF /* Coordinator.h */,
-				611ACB9643D884858EB22ABF /* Storage.m */,
+				611AC160A38D48AF7A2FE9EF /* Coordinator.m */,
 				611AC49D426D2BD781458314 /* Storage.h */,
+				611ACB9643D884858EB22ABF /* Storage.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -144,9 +146,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D84F614E22AED7B0001CCFB5 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				611AC41E7567EB7ED90F9155 /* RoundButton.h */,
+				611AC3AB1B9DD6480759C40E /* RoundButton.m */,
+				611ACD8968ED59291D86B023 /* RoundTextField.h */,
+				611AC1B36F480A5750A475C5 /* RoundTextField.m */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		D8966AF422AEEAC800F18115 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEE75A3021E7909500B09FD5 /* Assets.xcassets */,
+				DEE75A2E21E78EE300B09FD5 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8966AF522AEEAE900F18115 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DE6830C921E7821100ABFBCB /* Info.plist */,
+				DE6830C621E7821100ABFBCB /* LaunchScreen.storyboard */,
+				DE6830CA21E7821100ABFBCB /* main.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		DE6830AF21E7820F00ABFBCB = {
 			isa = PBXGroup;
 			children = (
+				D8464B1622D8ABCD007A6506 /* README.md */,
 				DE6830BA21E7820F00ABFBCB /* Demo */,
 				DE6830B921E7820F00ABFBCB /* Products */,
 				A6FB528A94259B277B3C46AF /* Pods */,
@@ -165,18 +198,11 @@
 		DE6830BA21E7820F00ABFBCB /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				DEE75A3021E7909500B09FD5 /* Assets.xcassets */,
+				D84F614A22AEA209001CCFB5 /* config.h */,
 				DE6830BB21E7820F00ABFBCB /* AppDelegate.h */,
 				DE6830BC21E7820F00ABFBCB /* AppDelegate.m */,
-				DE6830BE21E7820F00ABFBCB /* MainVC.h */,
-				DEE75A2E21E78EE300B09FD5 /* Main.storyboard */,
-				DE6830C621E7821100ABFBCB /* LaunchScreen.storyboard */,
-				DE6830C921E7821100ABFBCB /* Info.plist */,
-				DE6830CA21E7821100ABFBCB /* main.m */,
-				611AC3AB1B9DD6480759C40E /* RoundButton.m */,
-				611AC41E7567EB7ED90F9155 /* RoundButton.h */,
-				611AC1B36F480A5750A475C5 /* RoundTextField.m */,
-				611ACD8968ED59291D86B023 /* RoundTextField.h */,
+				D8966AF522AEEAE900F18115 /* Support */,
+				D8966AF422AEEAC800F18115 /* Resources */,
 				611AC715ACBED069930E498C /* VC */,
 				611ACE8A63CA32B3D4AB82CD /* Logic */,
 				611ACA1CE79A374F20DD526A /* Extensions */,
@@ -273,6 +299,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SOCKit/SOCKit.framework",
 				"${PODS_ROOT}/SumSubstanceKYC/SumSubstanceKYC.framework",
+				"${PODS_ROOT}/SumSubstanceKYC/SumSubstanceKYC_FaceTracker.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionKit/TransitionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
@@ -291,6 +318,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SOCKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SumSubstanceKYC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SumSubstanceKYC_FaceTracker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
@@ -337,7 +365,7 @@
 				611ACD45A9C5EC85412C1AAC /* SelectionVC.m in Sources */,
 				611ACE49274030E5C7232394 /* Storage.m in Sources */,
 				611AC49EB7A5B333D88A3E97 /* LoadingVC.m in Sources */,
-				611AC9CF012F2464D08BA822 /* Navigation.m in Sources */,
+				611AC9CF012F2464D08BA822 /* NavigationController.m in Sources */,
 				611AC738B35FBB34959C77CC /* UIColor+AdditionalColors.m in Sources */,
 				611AC22DB49F5721179D0397 /* UIView+shake.m in Sources */,
 				611ACFBD5D602AC6C36E231E /* UIViewController+StoryboardInstance.m in Sources */,
@@ -478,16 +506,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2M257Z2B9X;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,6 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Debug;
 		};
@@ -507,16 +528,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2M257Z2B9X;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)/Sum&Substance\\ Demo\\ app",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +538,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Release;
 		};

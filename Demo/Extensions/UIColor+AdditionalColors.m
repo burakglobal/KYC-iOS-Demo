@@ -5,9 +5,10 @@
 
 #import "UIColor+AdditionalColors.h"
 
-
 @implementation UIColor (AdditionalColors)
+
 + (instancetype)duskBlue {
     return [UIColor colorWithRed:42 / 255.f green:51 / 255.f blue:143 / 255.f alpha:1];
 }
+
 @end

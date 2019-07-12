@@ -5,8 +5,8 @@
 
 #import "RoundButton.h"
 
-
 @implementation RoundButton
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setup];
@@ -17,7 +17,6 @@
     if (self) {
         [self setup];
     }
-
     return self;
 }
 

@@ -21,14 +21,14 @@
 @end
 
 @implementation LoginVC
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupWelcomeLabel];
 
-    [[Storage.instance rac_channelTerminalForKey:udLogin]
-            subscribe:self.loginTextField.rac_newTextChannel];
-    [[Storage.instance rac_channelTerminalForKey:udPassword]
-            subscribe:self.passwordTextField.rac_newTextChannel];
+    [[Storage.instance rac_channelTerminalForKey:udLogin] subscribe:self.loginTextField.rac_newTextChannel];
+    [[Storage.instance rac_channelTerminalForKey:udPassword] subscribe:self.passwordTextField.rac_newTextChannel];
 
     self.passwordTextField.secureTextEntry = true;
 }
@@ -52,4 +52,5 @@
         [self.passwordTextField shake];
     }];
 }
+
 @end
