@@ -17,7 +17,7 @@
 #else
     /// Testing environment
     static NSString *const restBaseUrl = @"https://test-api.sumsub.com";
-    static NSString *const kycBaseUrl = @"test-msdk2.sumsub.com";
+    static NSString *const kycBaseUrl = @"test-msdk.sumsub.com";
 #endif
 
 static NSString *const restLoginRequestPath = @"/resources/auth/login";

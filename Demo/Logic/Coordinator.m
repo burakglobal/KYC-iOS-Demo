@@ -94,7 +94,7 @@ static Coordinator *instance;
                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
 }
 
-- (void)loginWith:(NSString *)login password:(NSString *)password failureAnimation:(void (^)(void))failureAnimation {
+- (void)loginWith:(NSString *)login password:(NSString *)password onSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSError *error))onFailure {
     
     [self setAuthLogin:login password:password];
     
@@ -109,11 +109,11 @@ static Coordinator *instance;
                       NSLog(@"Coordinator: has obtained authToken\n%@", authToken);
 #endif
                       [self setAuthToken:authToken];
-                      [self nextStep];
+                      if (onSuccess) onSuccess();
                   }
                   failure:^(RKObjectRequestOperation *operation, NSError *error) {
                       [Storage.instance setObject:nil forKey:udPassword];
-                      if (failureAnimation) failureAnimation();
+                      if (onFailure) onFailure(error);
                   }];
 }
 
@@ -156,6 +156,32 @@ static Coordinator *instance;
                   }];
 }
 
+- (void)refreshToken {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    NSString *login = [Storage.instance objectForKey:udLogin];
+    NSString *password = [Storage.instance objectForKey:udPassword];
+    
+    [self loginWith:login password:password onSuccess:^{
+        
+        [SSEngine.instance setRefreshToken:[Storage.instance objectForKey:udToken]];
+        
+    } onFailure:^(NSError *error) {
+        
+        [weakSelf showAlertWithTitle:@"Unable to obtain new token"
+                             message:error.localizedDescription
+                               onTap:^(BOOL shouldRetry)
+         {
+             if (shouldRetry) {
+                 [weakSelf refreshToken];
+             } else {
+                 [SSEngine.instance shutdown];
+             }
+         }];
+    }];
+}
+
 #pragma mark - KYC
 
 - (void)startNewCheck {
@@ -189,7 +215,9 @@ static Coordinator *instance;
     [engine connectWithExpirationHandler:^{
         // Handle token expiration
         NSLog(@"Coordinator: token is expired");
-        // [SSEngine.instance setRefreshToken:newToken];
+        
+        [Coordinator.instance refreshToken];
+        
     } verificationResultHandler:^(bool verified) {
         // Handle verification result
         NSLog(@"Coordinator: verification is done (verified=%@)", @(verified));
@@ -278,6 +306,32 @@ static Coordinator *instance;
                                         attributes:attrs]];
     }
     return string;
+}
+
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message onTap:(void(^)(BOOL shouldRetry))onTap {
+    
+    UIAlertController *alert =
+    [UIAlertController alertControllerWithTitle:title
+                                        message:message
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:
+     [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+        if (onTap) onTap(NO);
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [alert addAction:
+     [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        if (onTap) onTap(YES);
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    UIViewController *controller = UIApplication.sharedApplication.keyWindow.rootViewController;
+    while (controller.presentedViewController) controller = controller.presentedViewController;
+    [controller presentViewController:alert animated:YES completion:nil];
 }
 
 @end

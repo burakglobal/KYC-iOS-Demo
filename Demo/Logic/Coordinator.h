@@ -11,9 +11,14 @@
 
 + (instancetype)instance;
 
-- (void)loginWith:(NSString *)login password:(NSString *)password failureAnimation:(void (^)(void))animation;
-
 + (void)createInstanceWith:(UINavigationController *const)controller;
+
+- (void)loginWith:(NSString *)login
+         password:(NSString *)password
+        onSuccess:(void(^)(void))onSuccess
+        onFailure:(void(^)(NSError *error))onFailure;
+
+- (void)showSelection;
 
 - (void)startNewCheck;
 

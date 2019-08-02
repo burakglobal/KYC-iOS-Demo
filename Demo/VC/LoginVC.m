@@ -48,7 +48,13 @@
 }
 
 - (IBAction)login {
-    [Coordinator.instance loginWith:self.loginTextField.text password:self.passwordTextField.text failureAnimation:^{
+    
+    [Coordinator.instance loginWith:self.loginTextField.text password:self.passwordTextField.text onSuccess:^{
+        
+        [Coordinator.instance showSelection];
+        
+    } onFailure:^(NSError *error) {
+        
         [self.passwordTextField shake];
     }];
 }
