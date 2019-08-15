@@ -51,7 +51,7 @@
     
     [Coordinator.instance loginWith:self.loginTextField.text password:self.passwordTextField.text onSuccess:^{
         
-        [Coordinator.instance showSelection];
+        [Coordinator.instance nextStep];
         
     } onFailure:^(NSError *error) {
         

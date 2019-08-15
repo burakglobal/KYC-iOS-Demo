@@ -18,7 +18,7 @@
         onSuccess:(void(^)(void))onSuccess
         onFailure:(void(^)(NSError *error))onFailure;
 
-- (void)showSelection;
+- (void)nextStep;
 
 - (void)startNewCheck;
 
