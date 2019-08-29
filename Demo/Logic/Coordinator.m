@@ -197,9 +197,6 @@ static Coordinator *instance;
 }
 
 - (void)startKYC {
-#if DEBUG
-    setenv("SS_DEBUG", "true", 1);
-#endif
     NSString *applicantID = [Storage.instance objectForKey:udApplicant];
     NSString *locale = [Storage.instance objectForKey:udLocale];
     NSString *token = [Storage.instance objectForKey:udToken];

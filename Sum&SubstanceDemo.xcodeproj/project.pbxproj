@@ -299,9 +299,10 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SOCKit/SOCKit.framework",
 				"${PODS_ROOT}/SumSubstanceKYC/SumSubstanceKYC.framework",
-				"${PODS_ROOT}/SumSubstanceKYC/SumSubstanceKYC_FaceTracker.framework",
+				"${PODS_ROOT}/SumSubstanceKYC/SumSubstanceKYC_Liveness3D.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionKit/TransitionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+				"${PODS_ROOT}/ZoomSDK/ZoomAuthenticationHybrid.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -318,9 +319,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SOCKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SumSubstanceKYC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SumSubstanceKYC_FaceTracker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SumSubstanceKYC_Liveness3D.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZoomAuthenticationHybrid.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
