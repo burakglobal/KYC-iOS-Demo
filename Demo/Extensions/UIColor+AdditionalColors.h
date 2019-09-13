@@ -9,5 +9,6 @@
 @interface UIColor (AdditionalColors)
 
 + (instancetype)duskBlue;
++ (instancetype)saladColor;
 
 @end

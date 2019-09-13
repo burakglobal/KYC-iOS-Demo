@@ -8,6 +8,8 @@
 #import "Storage.h"
 #import "Coordinator.h"
 #import "RoundTextField.h"
+#import "UIColor+AdditionalColors.h"
+#import "UIImage+Mask.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface SelectionVC () <UITextFieldDelegate>
@@ -15,6 +17,7 @@
 @property(strong, nonatomic) IBOutlet UILabel *promoLabel;
 @property(strong, nonatomic) IBOutlet RoundButton *createNewButton;
 @property(strong, nonatomic) IBOutlet RoundButton *existingButton;
+@property(strong, nonatomic) IBOutlet RoundButton *livenessButton;
 @property(strong, nonatomic) IBOutlet RoundTextField *localeTextField;
 
 @end
@@ -31,6 +34,14 @@
                 return @(value.length > 0);
             }];
 
+    [self.livenessButton setBackgroundImage:[[UIImage imageNamed:@"buttonBackground"]
+                                             maskedImageWithColor:UIColor.saladColor].resizableBubble
+                                   forState:UIControlStateNormal];
+    [self.livenessButton setBackgroundImage:[[UIImage imageNamed:@"buttonPressed"]
+                                             maskedImageWithColor:[UIColor.saladColor
+                                                                   colorWithAlphaComponent:0.75]].resizableBubble
+                                   forState:UIControlStateHighlighted];
+
     self.localeTextField.delegate = self;
     
     [[[Storage.instance rac_channelTerminalForKey:udLocale] map:^NSString *(NSString *li) {
@@ -42,17 +53,21 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [self selectLanguage];
+    [self selectLanguage:textField];
     return NO;
 }
 
-- (IBAction)selectLanguage {
+- (IBAction)selectLanguage:(UIView *)sender {
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil
                                                                         message:nil
                                                                  preferredStyle:UIAlertControllerStyleActionSheet];
     [self addActionIn:controller forLocale:@"en_US"];
     [self addActionIn:controller forLocale:@"ru_RU"];
     // [self addActionIn:controller forLocale:@"de_DE"];
+    
+    controller.popoverPresentationController.sourceView = sender;
+    controller.popoverPresentationController.sourceRect = sender.bounds;
+    
     [self presentViewController:controller animated:true completion:nil];
 }
 
@@ -87,6 +102,10 @@
 
 - (IBAction)continueCheck {
     [Coordinator.instance continueCheck];
+}
+
+- (IBAction)livenessCheck {
+    [Coordinator.instance livenessCheck];
 }
 
 @end

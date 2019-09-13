@@ -19,6 +19,8 @@
 		611ACD45A9C5EC85412C1AAC /* SelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611AC52463ACA970C3E18E25 /* SelectionVC.m */; };
 		611ACE49274030E5C7232394 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACB9643D884858EB22ABF /* Storage.m */; };
 		611ACFBD5D602AC6C36E231E /* UIViewController+StoryboardInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 611ACABBA3E2B3F9F53381FB /* UIViewController+StoryboardInstance.m */; };
+		D84D4366232A66C7009EB510 /* UIImage+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = D84D4365232A66C7009EB510 /* UIImage+Mask.m */; };
+		D86B88CB232A83F500AE81F8 /* Zoom.strings in Resources */ = {isa = PBXBuildFile; fileRef = D86B88CD232A83F500AE81F8 /* Zoom.strings */; };
 		DE6830BD21E7820F00ABFBCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6830BC21E7820F00ABFBCB /* AppDelegate.m */; };
 		DE6830C821E7821100ABFBCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6830C621E7821100ABFBCB /* LaunchScreen.storyboard */; };
 		DE6830CB21E7821100ABFBCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6830CA21E7821100ABFBCB /* main.m */; };
@@ -66,7 +68,12 @@
 		8D7B5198A0F24474ADA660CA /* Pods-SSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDemo.debug.xcconfig"; path = "Target Support Files/Pods-SSDemo/Pods-SSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C5F2D655089EE2B3FB305EB6 /* Pods_SSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8464B1622D8ABCD007A6506 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D84D4364232A66C7009EB510 /* UIImage+Mask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mask.h"; sourceTree = "<group>"; };
+		D84D4365232A66C7009EB510 /* UIImage+Mask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mask.m"; sourceTree = "<group>"; };
 		D84F614A22AEA209001CCFB5 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		D86B88CA232A83D700AE81F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D86B88CC232A83F500AE81F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Zoom.strings; sourceTree = "<group>"; };
+		D86B88CE232A841700AE81F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Zoom.strings; sourceTree = "<group>"; };
 		DE6830B821E7820F00ABFBCB /* SSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6830BB21E7820F00ABFBCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE6830BC21E7820F00ABFBCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +121,8 @@
 				611AC5A7EE70762463EA2A4F /* UIView+shake.m */,
 				611ACD686890300E540E3179 /* UIViewController+StoryboardInstance.h */,
 				611ACABBA3E2B3F9F53381FB /* UIViewController+StoryboardInstance.m */,
+				D84D4364232A66C7009EB510 /* UIImage+Mask.h */,
+				D84D4365232A66C7009EB510 /* UIImage+Mask.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 		D8966AF422AEEAC800F18115 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D86B88CD232A83F500AE81F8 /* Zoom.strings */,
 				DEE75A3021E7909500B09FD5 /* Assets.xcassets */,
 				DEE75A2E21E78EE300B09FD5 /* Main.storyboard */,
 			);
@@ -254,6 +264,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = DE6830AF21E7820F00ABFBCB;
 			productRefGroup = DE6830B921E7820F00ABFBCB /* Products */;
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6830C821E7821100ABFBCB /* LaunchScreen.storyboard in Resources */,
+				D86B88CB232A83F500AE81F8 /* Zoom.strings in Resources */,
 				DEE75A3121E7909500B09FD5 /* Assets.xcassets in Resources */,
 				DEE75A2F21E78EE300B09FD5 /* Main.storyboard in Resources */,
 			);
@@ -369,6 +381,7 @@
 				611AC49EB7A5B333D88A3E97 /* LoadingVC.m in Sources */,
 				611AC9CF012F2464D08BA822 /* NavigationController.m in Sources */,
 				611AC738B35FBB34959C77CC /* UIColor+AdditionalColors.m in Sources */,
+				D84D4366232A66C7009EB510 /* UIImage+Mask.m in Sources */,
 				611AC22DB49F5721179D0397 /* UIView+shake.m in Sources */,
 				611ACFBD5D602AC6C36E231E /* UIViewController+StoryboardInstance.m in Sources */,
 			);
@@ -377,10 +390,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D86B88CD232A83F500AE81F8 /* Zoom.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D86B88CC232A83F500AE81F8 /* ru */,
+				D86B88CE232A841700AE81F8 /* en */,
+			);
+			name = Zoom.strings;
+			sourceTree = "<group>";
+		};
 		DE6830C621E7821100ABFBCB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE6830C721E7821100ABFBCB /* Base */,
+				D86B88CA232A83D700AE81F8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -392,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -451,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

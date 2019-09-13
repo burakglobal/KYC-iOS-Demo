@@ -24,4 +24,6 @@
 
 - (void)continueCheck;
 
+- (void)livenessCheck;
+
 @end

@@ -1,0 +1,76 @@
+//
+// Liveness3D localization
+//
+
+"zoom_action_continue" = "ПРОДОЛЖИТЬ";
+"zoom_action_try_again" = "ПОВТОРИТЬ";
+"zoom_action_ok" = "OK";
+"zoom_action_im_ready" = "Я ГОТОВ";
+
+"zoom_camera_permission_header" = "Доступ к камере";
+"zoom_camera_permission_message_enroll" = "Для проверки живости, разрешите, пожалуйста, доступ к камере.";
+"zoom_camera_permission_message_auth" = "Нет доступа к камере. Чтобы продолжить, пожалуйста, разрешите доступ в Настройках.";
+"zoom_camera_permission_enable_camera" = "РАЗРЕШИТЬ ДОСТУП";
+"zoom_camera_permission_launch_settings" = "ОТКРЫТЬ НАСТРОЙКИ";
+
+"zoom_feedback_center_face" = "Отцентруйте лицо";
+"zoom_feedback_face_not_found" = "Поместите лицо в овал";
+"zoom_feedback_face_not_looking_straight_ahead" = "Смотрите в камеру";
+"zoom_feedback_face_not_upright" = "Не наклоняйте голову";
+"zoom_feedback_hold_steady" = "Не двигайтесь";
+"zoom_feedback_move_phone_away" = "Отодвинтесь назад";
+"zoom_feedback_move_tablet_away" = "Отодвинтесь назад";
+"zoom_feedback_move_phone_closer" = "Придвиньтесь ближе";
+"zoom_feedback_move_phone_even_closer" = "Еще ближе";
+"zoom_feedback_move_tablet_closer" = "Придвиньтесь ближе";
+"zoom_feedback_move_phone_to_eye_level" = "Поднимите лицо";
+"zoom_feedback_move_tablet_to_eye_level" = "Поднимите лицо";
+"zoom_feedback_use_even_lighting" = "Осветите лицо равномерно";
+
+"zoom_locked_header" = "Включена блокировка";
+"zoom_locked_header_ready" = "Готово";
+"zoom_locked_try_again_in" = "Попробуйте через:";
+"zoom_locked_button" = "Заблокировано";
+
+"zoom_pre_enroll_header" = "Проверка живости";
+"zoom_pre_enroll_header_lighting" = "Осветите лицо равномерно";
+"zoom_pre_enroll_header_face_angle" = "Смотрите прямо в камеру";
+"zoom_pre_enroll_header_ready" = "Все готово!";
+"zoom_pre_enroll_message" = "Пройдите проверку, следуя инструкции";
+"zoom_pre_enroll_message_lighting" = "Свет должен падать на лицо равномерно";
+"zoom_pre_enroll_message_face_angle" = "Убедитесь, что камера расположена на уровне глаз";
+
+"zoom_retry_generic_header" = "Проверьте освещение и положение устройства";
+"zoom_retry_generic_message" = "Убедитесь, что камера расположена на уровне глаз и лицо освещается равномерно";
+"zoom_retry_bad_lighting_header" = "Освещение";
+"zoom_retry_bad_lighting_message" = "Свет должен падать на лицо равномерно";
+"zoom_retry_face_angle_header" = "Убедитесь, что камера расположена на уровне глаз";
+
+"zoom_token_issue_header" = "Uh oh...";
+"zoom_token_issue_message" = "The ZoOm Developer Token for this application could not be validated. Please verify your token and network connection and try again.";
+
+// Liveness3D
+
+"alert_cancel" = "Отмена";
+"alert_continue" = "Продолжить";
+"alert_retry" = "Повторить";
+"liveness_title" = "Проверка живости";
+"liveness_check_failed" = "Проверка не удалась. Пожалуйста, попробуйте заново.";
+"liveness_check_success" = "Успешно!";
+"liveness_device_locked" = "Устройство временно заблокировано. Пожалуйста, попробуйте позднее.";
+"liveness_initializing" = "Подготовка...";
+"liveness_network_failure" = "Пожалуйста, проверьте сетевое соединение и попробуйте еще раз.";
+"liveness_prepare_for_retake" = "Секундочку...";
+"liveness_processing" = "Ожидайте результатов проверки...";
+"liveness_retry_brief_check_hints" = "Убедитесь, пожалуйста, что условия съемки соответствуют требованиям";
+"liveness_retry_brief_check_images" = "Посмотрите, пожалуйста, на изображения ниже и скорректируйте условия съемки при необходимости";
+"liveness_retry_general_hint" = "• Держитесь свободно\n• Осветите лицо равномерно";
+"liveness_retry_hint_back_lighting" = "• Освещение должно быть равномерным";
+"liveness_retry_hint_bad_lighting" = "• Освещение должно быть равномерным";
+"liveness_retry_hint_check_lighting" = "• Камера расположена на уровне глаз и лицо освещается равномерно";
+"liveness_retry_hint_face_angle" = "• Камера расположена на уровне глаз";
+"liveness_retry_ideal_image" = "Должно быть";
+"liveness_retry_title" = "Давайте повторим";
+"liveness_retry_your_image" = "Ваш результат";
+"liveness_try_again" = "ПОВТОРИТЬ";
+"liveness_wrong_orientation" = "Пожалуйста, поверните устройство и попробуйте еще раз.";

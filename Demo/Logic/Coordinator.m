@@ -16,16 +16,21 @@
 #import <SumSubstanceKYC/SumSubstanceKYC.h>
 #import <SumSubstanceKYC/KYCColorConfig.h>
 #import <SumSubstanceKYC/KYCImageConfig.h>
+#import <SumSubstanceKYC_Liveness3D/SSLiveness3D.h>
 
 #import "config.h"
 
 @interface Coordinator ()
 
-@property(nonatomic, strong) RKObjectManager *rest;
-@property(nonatomic, strong) UINavigationController *navigationController;
-@property(nonatomic, strong) UIViewController *loginVC;
-@property(nonatomic, strong) UIViewController *selectionVC;
-@property(nonatomic, strong) UIViewController *loadingVC;
+@property (nonatomic, strong) RKObjectManager *rest;
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UIViewController *loginVC;
+@property (nonatomic, strong) UIViewController *selectionVC;
+@property (nonatomic, strong) UIViewController *loadingVC;
+
+@property (nonatomic) NSString *applicantID;
+@property (nonatomic) NSString *token;
+@property (nonatomic) NSString *locale;
 
 @end
 
@@ -158,6 +163,18 @@ static Coordinator *instance;
 
 - (void)refreshToken {
     
+    [self getNewToken:^(NSError *error, NSString *token) {
+
+        if (!error) {
+            [SSEngine.instance setRefreshToken:token];
+        } else {
+            [SSEngine.instance shutdown];
+        }
+    }];
+}
+
+- (void)getNewToken:(void(^)(NSError *error, NSString *token))onComplete {
+    
     __weak typeof(self) weakSelf = self;
     
     NSString *login = [Storage.instance objectForKey:udLogin];
@@ -165,7 +182,7 @@ static Coordinator *instance;
     
     [self loginWith:login password:password onSuccess:^{
         
-        [SSEngine.instance setRefreshToken:[Storage.instance objectForKey:udToken]];
+        return onComplete ? onComplete(nil, weakSelf.token) : nil;
         
     } onFailure:^(NSError *error) {
         
@@ -174,9 +191,9 @@ static Coordinator *instance;
                                onTap:^(BOOL shouldRetry)
          {
              if (shouldRetry) {
-                 [weakSelf refreshToken];
+                 [weakSelf getNewToken:onComplete];
              } else {
-                 [SSEngine.instance shutdown];
+                 return onComplete ? onComplete(error, nil) : nil;
              }
          }];
     }];
@@ -197,25 +214,29 @@ static Coordinator *instance;
 }
 
 - (void)startKYC {
-    NSString *applicantID = [Storage.instance objectForKey:udApplicant];
-    NSString *locale = [Storage.instance objectForKey:udLocale];
-    NSString *token = [Storage.instance objectForKey:udToken];
+    NSString *baseUrl = kycBaseUrl;
+    NSString *applicantId = self.applicantId;
+    NSString *token = self.token;
+    NSString *locale = self.locale;
+    NSString *supportEmail = @"support@sumsub.com";
     
-    SSEngine *engine = [SSFacade setupForApplicant:applicantID
+    SSEngine *engine = [SSFacade setupForApplicant:applicantId
                                          withToken:token
                                             locale:locale
-                                      supportEmail:@"support@sumsub.com"
-                                           baseUrl:kycBaseUrl
+                                      supportEmail:supportEmail
+                                           baseUrl:baseUrl
                                        colorConfig:nil
                                        imageConfig:nil];
 
     [engine connectWithExpirationHandler:^{
+        
         // Handle token expiration
         NSLog(@"Coordinator: token is expired");
         
         [Coordinator.instance refreshToken];
         
     } verificationResultHandler:^(bool verified) {
+        
         // Handle verification result
         NSLog(@"Coordinator: verification is done (verified=%@)", @(verified));
     }];
@@ -229,7 +250,78 @@ static Coordinator *instance;
                                           }];
 }
 
+#pragma mark - Liveness
+
+- (void)livenessCheck {
+    
+    NSString *baseUrl = kycBaseUrl;
+    NSString *token = self.token;
+    NSString *locale = self.locale;
+
+    // Setup
+    
+    // Note: Text localization is based on Zoom.strings file
+    //       that should be added into the host application,
+    //       see Demo/Resources/Zoom.string for the example
+    
+    SSLiveness3D *liveness3D =
+    [SSLiveness3D.alloc initWithBaseUrl:baseUrl
+                                  token:token
+                                 locale:locale
+                 tokenExpirationHandler:^(void (^ _Nonnull completionHandler)(NSString * _Nullable))
+     {
+         NSLog(@"Coordinator: token is expired");
+         
+         // get new token then call completionHandler
+         [self getNewToken:^(NSError *error, NSString *token) {
+             
+             completionHandler(token);
+         }];
+         
+     } completionHandler:^(UIViewController * _Nonnull controller, SSLiveness3DStatus status) {
+         
+         NSLog(@"Coordinator: Liveness3D completes with status: %@", [SSLiveness3D descriptionForStatus:status]);
+         
+         // if (status == SSLiveness3DStatus_CameraPermissionDenied) {
+         //     [UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+         // }
+         
+         [controller dismissViewControllerAnimated:YES completion:nil];
+     }];
+
+//    // Optional image customization
+//
+//    liveness3D.imageHandler = ^UIImage * _Nullable(NSString * _Nonnull key) {
+//
+//        if ([key isEqualToString:@"liveness-logo"]) {
+//            return [UIImage imageNamed:@"AppIcon"];
+//        } else {
+//            return nil;
+//        }
+//    };
+
+    // Create and display view controller
+    
+    UIViewController *vc = [liveness3D getController];
+    
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
 #pragma mark - Storage
+
+- (NSString *)applicantId {
+    return [Storage.instance objectForKey:udApplicant];
+}
+
+- (NSString *)token {
+    return [Storage.instance objectForKey:udToken];
+}
+
+- (NSString *)locale {
+    return [Storage.instance objectForKey:udLocale];
+}
 
 - (void)setApplicant:(NSString *)applicant {
     [Storage.instance setObject:applicant forKey:udApplicant];
