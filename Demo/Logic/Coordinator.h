@@ -24,6 +24,6 @@
 
 - (void)continueCheck;
 
-- (void)livenessCheck;
+- (void)faceMatchCheck;
 
 @end

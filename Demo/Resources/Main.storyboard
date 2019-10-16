@@ -217,11 +217,11 @@ log in to continue</string>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-TN-TAq" customClass="RoundButton">
                                                                 <rect key="frame" x="-7" y="0.0" width="388" height="74"/>
-                                                                <state key="normal" title="Liveness check" backgroundImage="buttonBackground">
+                                                                <state key="normal" title="Face match check" backgroundImage="buttonBackground">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="livenessCheck" destination="OdJ-eb-zg9" eventType="touchUpInside" id="feu-mG-Ttv"/>
+                                                                    <action selector="faceMatchCheck" destination="OdJ-eb-zg9" eventType="touchUpInside" id="Hbe-Fe-Vfh"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -265,7 +265,7 @@ log in to continue</string>
                     <connections>
                         <outlet property="createNewButton" destination="pSh-2q-ipN" id="EJR-f7-dsy"/>
                         <outlet property="existingButton" destination="M3f-w1-2ov" id="ACw-um-EWk"/>
-                        <outlet property="livenessButton" destination="KkQ-TN-TAq" id="f2a-BX-CrT"/>
+                        <outlet property="faceMatchButton" destination="KkQ-TN-TAq" id="AIR-yb-OLh"/>
                         <outlet property="localeTextField" destination="Fl5-NF-aCS" id="ntj-HA-k83"/>
                         <outlet property="promoLabel" destination="gWW-Pd-bXP" id="5Gj-Ja-y9G"/>
                     </connections>

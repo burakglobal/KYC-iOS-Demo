@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UIViewController *selectionVC;
 @property (nonatomic, strong) UIViewController *loadingVC;
 
-@property (nonatomic) NSString *applicantID;
+@property (nonatomic) NSString *applicantId;
 @property (nonatomic) NSString *token;
 @property (nonatomic) NSString *locale;
 
@@ -267,11 +267,12 @@ static Coordinator *instance;
 
 #pragma mark - Liveness
 
-- (void)livenessCheck {
+- (void)faceMatchCheck {
     
     NSString *baseUrl = kycBaseUrl;
     NSString *token = self.token;
     NSString *locale = self.locale;
+    NSString *applicantId = self.applicantId;
 
     // Setup
     
@@ -281,6 +282,7 @@ static Coordinator *instance;
     
     SSLiveness3D *liveness3D =
     [SSLiveness3D.alloc initWithBaseUrl:baseUrl
+                            applicantId:applicantId
                                   token:token
                                  locale:locale
                  tokenExpirationHandler:^(void (^ _Nonnull completionHandler)(NSString * _Nullable))
@@ -293,9 +295,9 @@ static Coordinator *instance;
              completionHandler(token);
          }];
          
-     } completionHandler:^(UIViewController * _Nonnull controller, SSLiveness3DStatus status) {
+     } completionHandler:^(UIViewController * _Nonnull controller, SSLiveness3DStatus status, SSLiveness3DResult * _Nullable result) {
          
-         NSLog(@"Coordinator: Liveness3D completes with status: %@", [SSLiveness3D descriptionForStatus:status]);
+         NSLog(@"Coordinator: Liveness3D completes with status: %@, result: %@", [SSLiveness3D descriptionForStatus:status], result);
          
          // if (status == SSLiveness3DStatus_CameraPermissionDenied) {
          //     [UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
@@ -303,6 +305,16 @@ static Coordinator *instance;
          
          [controller dismissViewControllerAnimated:YES completion:nil];
      }];
+    
+    // Optional asynchronous handler to be called right after a new result is got from the server.
+    // Must call `completionHandler` passed with a boolean parameter. Pass `YES` to stop further processing.
+    
+    liveness3D.resultHandler = ^(SSLiveness3DResult * _Nonnull result, void (^ _Nonnull completionHandler)(BOOL)) {
+      
+        NSLog(@"Coordinator: Liveness3D got result from server: %@", result);
+        
+        completionHandler(NO);
+    };
 
 //    // Optional image customization
 //

@@ -17,7 +17,7 @@
 @property(strong, nonatomic) IBOutlet UILabel *promoLabel;
 @property(strong, nonatomic) IBOutlet RoundButton *createNewButton;
 @property(strong, nonatomic) IBOutlet RoundButton *existingButton;
-@property(strong, nonatomic) IBOutlet RoundButton *livenessButton;
+@property(strong, nonatomic) IBOutlet RoundButton *faceMatchButton;
 @property(strong, nonatomic) IBOutlet RoundTextField *localeTextField;
 
 @end
@@ -34,13 +34,18 @@
                 return @(value.length > 0);
             }];
 
-    [self.livenessButton setBackgroundImage:[[UIImage imageNamed:@"buttonBackground"]
-                                             maskedImageWithColor:UIColor.saladColor].resizableBubble
-                                   forState:UIControlStateNormal];
-    [self.livenessButton setBackgroundImage:[[UIImage imageNamed:@"buttonPressed"]
-                                             maskedImageWithColor:[UIColor.saladColor
-                                                                   colorWithAlphaComponent:0.75]].resizableBubble
-                                   forState:UIControlStateHighlighted];
+    RAC(self.faceMatchButton, enabled) =
+            [[Storage.instance rac_channelTerminalForKey:udApplicant] map:^NSNumber *(NSString *value) {
+                return @(value.length > 0);
+            }];
+    
+    [self.faceMatchButton setBackgroundImage:[[UIImage imageNamed:@"buttonBackground"]
+                                              maskedImageWithColor:UIColor.saladColor].resizableBubble
+                                    forState:UIControlStateNormal];
+    [self.faceMatchButton setBackgroundImage:[[UIImage imageNamed:@"buttonPressed"]
+                                              maskedImageWithColor:[UIColor.saladColor
+                                                                    colorWithAlphaComponent:0.75]].resizableBubble
+                                    forState:UIControlStateHighlighted];
 
     self.localeTextField.delegate = self;
     
@@ -104,8 +109,8 @@
     [Coordinator.instance continueCheck];
 }
 
-- (IBAction)livenessCheck {
-    [Coordinator.instance livenessCheck];
+- (IBAction)faceMatchCheck {
+    [Coordinator.instance faceMatchCheck];
 }
 
 @end
