@@ -20,7 +20,7 @@
 
 #import "config.h"
 
-@interface Coordinator ()
+@interface Coordinator () <UIAdaptivePresentationControllerDelegate>
 
 @property (nonatomic, strong) RKObjectManager *rest;
 @property (nonatomic, strong) UINavigationController *navigationController;
@@ -243,11 +243,26 @@ static Coordinator *instance;
     
     UINavigationController *chatVC = [SSFacade getChatControllerWithAttributedTitle:self.attributedTitleForChat];
     
+    // iOS 13 option 1:
+    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        chatVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    }
+
+//    // iOS 13 option 2:
+//    chatVC.presentationController.delegate = self;
+    
     [self.navigationController presentViewController:chatVC
                                             animated:true
                                           completion:^{
                                               [self removeLoadingScreenAnimated:false];
                                           }];
+}
+
+#pragma mark - <UIAdaptivePresentationControllerDelegate>
+
+- (void)presentationControllerDidAttemptToDismiss:(UIPresentationController *)presentationController {
+    
+    [SSEngine.instance shutdown];
 }
 
 #pragma mark - Liveness
@@ -299,6 +314,9 @@ static Coordinator *instance;
 //            return nil;
 //        }
 //    };
+//
+//    // Optional color theme
+//    liveness3D.theme = ...
 
     // Create and display view controller
     
