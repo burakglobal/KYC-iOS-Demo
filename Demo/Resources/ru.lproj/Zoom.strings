@@ -21,7 +21,7 @@
 "zoom_feedback_face_not_looking_straight_ahead" = "Смотрите в камеру";
 "zoom_feedback_face_not_upright" = "Не наклоняйте голову";
 "zoom_feedback_hold_steady" = "Не двигайтесь";
-"zoom_feedback_move_phone_away" = "Отодвинтесь назад";
+"zoom_feedback_move_phone_away" = "Отодвиньтесь назад";
 "zoom_feedback_move_phone_closer" = "Придвиньтесь ближе";
 "zoom_feedback_move_phone_even_closer" = "Еще ближе";
 "zoom_feedback_move_phone_to_eye_level" = "Поднимите лицо";

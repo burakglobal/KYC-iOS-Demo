@@ -15,5 +15,6 @@
 + (instancetype)navigationTintColor;
 + (instancetype)actionColor;
 + (instancetype)actionHighlight;
++ (instancetype)actionTextDisabled;
 
 @end

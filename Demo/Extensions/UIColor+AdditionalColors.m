@@ -44,6 +44,10 @@
     return self.kycColors.actionButtonHighlightedBackground;
 }
 
++ (instancetype)actionTextDisabled {
+    return [self _dynamicColorForLight:UIColor.lightTextColor dark:UIColor.grayColor];
+}
+
 #pragma mark - Helpers
 
 + (UIColor *)_dynamicColorForLight:(UIColor *)lightColor dark:(UIColor *)darkColor {

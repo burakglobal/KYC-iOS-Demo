@@ -45,6 +45,8 @@
     const int shadowOffset = 14;
     self.contentEdgeInsets = UIEdgeInsetsMake(17, 0, 19 + shadowOffset, 0);
     
+    [self setTitleColor:UIColor.actionTextDisabled forState:UIControlStateDisabled];
+    
     [self applyStyle];
 }
 
