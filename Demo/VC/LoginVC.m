@@ -9,6 +9,7 @@
 #import "Coordinator.h"
 #import "UIView+shake.h"
 #import "Storage.h"
+#import "UIColor+AdditionalColors.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface LoginVC ()
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = UIColor.bgColor;
     
     [self setupWelcomeLabel];
 
@@ -45,6 +48,7 @@
                                                   NSFontAttributeName: [UIFont systemFontOfSize:36 weight:UIFontWeightLight],
                                           }]];
     self.welcomeLabel.attributedText = string;
+    self.welcomeLabel.textColor = UIColor.duskBlue;
 }
 
 - (IBAction)login {

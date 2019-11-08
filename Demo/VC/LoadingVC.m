@@ -4,11 +4,20 @@
 //
 
 #import "LoadingVC.h"
+#import "UIColor+AdditionalColors.h"
+
+@interface LoadingVC ()
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@end
 
 @implementation LoadingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = UIColor.bgColor;
+    self.loadingLabel.textColor = UIColor.duskBlue;
+    
     self.navigationItem.hidesBackButton = true;
 }
 

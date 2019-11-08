@@ -10,7 +10,8 @@
 
 @implementation UIImage (Mask)
 
-- (UIImage *)maskedImageWithColor:(UIColor *)color {
+- (UIImage *)maskedImageWithColor:(UIColor *)color {    
+    if (!color) return self;
     
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, self.scale);

@@ -24,7 +24,7 @@
 
     UINavigationController *controller;
     controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    controller.navigationBar.tintColor = UIColor.duskBlue;
+    controller.navigationBar.tintColor = UIColor.navigationTintColor;
     
     self.window = UIWindow.new;
     self.window.rootViewController = controller;

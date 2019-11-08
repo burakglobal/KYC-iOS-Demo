@@ -9,7 +9,6 @@
 #import "Coordinator.h"
 #import "RoundTextField.h"
 #import "UIColor+AdditionalColors.h"
-#import "UIImage+Mask.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface SelectionVC () <UITextFieldDelegate>
@@ -27,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = UIColor.bgColor;
+
     [self setupPromoLabel];
 
     RAC(self.existingButton, enabled) =
@@ -39,13 +40,7 @@
                 return @(value.length > 0);
             }];
     
-    [self.faceMatchButton setBackgroundImage:[[UIImage imageNamed:@"buttonBackground"]
-                                              maskedImageWithColor:UIColor.saladColor].resizableBubble
-                                    forState:UIControlStateNormal];
-    [self.faceMatchButton setBackgroundImage:[[UIImage imageNamed:@"buttonPressed"]
-                                              maskedImageWithColor:[UIColor.saladColor
-                                                                    colorWithAlphaComponent:0.75]].resizableBubble
-                                    forState:UIControlStateHighlighted];
+    [self.faceMatchButton setBgColor:UIColor.saladColor highlightBgColor:[UIColor.saladColor colorWithAlphaComponent:0.75]];
 
     self.localeTextField.delegate = self;
     
@@ -99,6 +94,7 @@
     [string setAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:36 weight:UIFontWeightMedium]}
                     range:[string.string rangeOfString:@"fastest"]];
     self.promoLabel.attributedText = string;
+    self.promoLabel.textColor = UIColor.duskBlue;
 }
 
 - (IBAction)startNewCheck {

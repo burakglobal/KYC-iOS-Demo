@@ -8,4 +8,6 @@
 
 @interface RoundButton : UIButton
 
+- (void)setBgColor:(UIColor *)bgColor highlightBgColor:(UIColor *)highlightBgColor;
+
 @end

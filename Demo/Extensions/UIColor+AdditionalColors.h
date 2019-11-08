@@ -11,4 +11,9 @@
 + (instancetype)duskBlue;
 + (instancetype)saladColor;
 
++ (instancetype)bgColor;
++ (instancetype)navigationTintColor;
++ (instancetype)actionColor;
++ (instancetype)actionHighlight;
+
 @end
