@@ -141,6 +141,10 @@ static Coordinator *instance;
                                             @{
                                                 @"idDocSetType": @"SELFIE",
                                                 @"types": @[@"SELFIE"],
+                                                },
+                                            @{
+                                                @"idDocSetType": @"PROOF_OF_RESIDENCE",
+                                                @"types": @[@"UTILITY_BILL"],
                                                 }
                                             ],
                                     @"includedCountries": @[],
@@ -219,7 +223,9 @@ static Coordinator *instance;
     NSString *token = self.token;
     NSString *locale = self.locale;
     NSString *supportEmail = @"support@sumsub.com";
-    
+
+    NSLog(@"Coordinator: startKYC for applicantId=%@ at %@", applicantId, baseUrl);
+
     SSEngine *engine = [SSFacade setupForApplicant:applicantId
                                          withToken:token
                                             locale:locale
@@ -241,15 +247,19 @@ static Coordinator *instance;
         NSLog(@"Coordinator: verification is done (verified=%@)", @(verified));
     }];
     
+    // Optional action event tracker
+    engine.onActionEvent = ^(SSActionEventInfo * _Nonnull info) {
+
+        NSLog(@"Coordinator: onActionEvent info.flowStep=%@", info.flowStep);
+    };
+    
     UINavigationController *chatVC = [SSFacade getChatControllerWithAttributedTitle:self.attributedTitleForChat];
     
-    // iOS 13 option 1:
-    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-        chatVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    }
-
-//    // iOS 13 option 2:
-//    chatVC.presentationController.delegate = self;
+//    // iOS 13 option:
+//    if (@available(iOS 13.0, *)) {
+//        chatVC.modalPresentationStyle = UIModalPresentationAutomatic;
+//        chatVC.presentationController.delegate = self;
+//    }
     
     [self.navigationController presentViewController:chatVC
                                             animated:true
@@ -278,7 +288,7 @@ static Coordinator *instance;
     
     // Note: Text localization is based on Zoom.strings file
     //       that should be added into the host application,
-    //       see Demo/Resources/Zoom.string for the example
+    //       see Demo/Resources/Zoom.strings for the example
     
     SSLiveness3D *liveness3D =
     [SSLiveness3D.alloc initWithBaseUrl:baseUrl
@@ -320,13 +330,13 @@ static Coordinator *instance;
 //
 //    liveness3D.imageHandler = ^UIImage * _Nullable(NSString * _Nonnull key) {
 //
-//        if ([key isEqualToString:@"liveness-logo"]) {
+//        if ([key isEqualToString:@"zoom_cancel"]) {
 //            return [UIImage imageNamed:@"AppIcon"];
 //        } else {
 //            return nil;
 //        }
 //    };
-//
+
 //    // Optional color theme
 //    liveness3D.theme = ...
 
