@@ -12,7 +12,7 @@
 
 "zoom_camera_permission_header" = "Enable Camera";
 "zoom_camera_permission_message_enroll" = "Please enable your selfie camera.";
-"zoom_camera_permission_message_auth" = "ZoOm has detected your camera permissions are disabled. Tap the button below to edit your OS settings.";
+"zoom_camera_permission_message_auth" = "Your camera permissions are disabled. Tap below to edit your settings.";
 "zoom_camera_permission_enable_camera" = "ENABLE CAMERA";
 "zoom_camera_permission_launch_settings" = "LAUNCH SETTINGS";
 
@@ -28,8 +28,8 @@
 "zoom_feedback_use_even_lighting" = "Light Face More Evenly";
 
 "zoom_instructions_header_lighting" = "Light Face Evenly";
-"zoom_instructions_header_face_angle" = "Hold Camera\nAt Eye Level";
-"zoom_instructions_header_ready" = "Get Ready For\nYour Video Selfie!";
+"zoom_instructions_header_face_angle" = "Please Hold Camera\nAt Eye Level";
+"zoom_instructions_header_ready" = "Get Ready For\nYour Video Selfie";
 "zoom_instructions_message_ready" = "Please Frame Your Face In\nThe Small Oval, Then The Big Oval";
 
 "zoom_locked_header" = "ZoOm is Locked";
@@ -39,11 +39,11 @@
 "zoom_result_facemap_upload_message" = "Processing";
 
 "zoom_retry_header" = "Let's try that again";
-"zoom_retry_subheader_message" = "But first, please take a look at your images and correct your environment.";
+"zoom_retry_subheader_message" = "But first, please take a look at your photo and correct your environment.";
 "zoom_retry_instruction_message_1" = "Neutral Expression, No Smiling";
 "zoom_retry_instruction_message_2" = "No Glare or Extreme Lighting";
-"zoom_retry_your_image_label" = "Your ZoOm";
-"zoom_retry_ideal_image_label" = "Ideal ZoOm";
+"zoom_retry_your_image_label" = "Your Selfie";
+"zoom_retry_ideal_image_label" = "Ideal Example";
 
 // Liveness3D
 
