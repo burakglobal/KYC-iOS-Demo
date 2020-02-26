@@ -105,8 +105,8 @@
     [Coordinator.instance continueCheck];
 }
 
-- (IBAction)faceMatchCheck {
-    [Coordinator.instance faceMatchCheck];
+- (IBAction)faceAuth {
+    [Coordinator.instance faceAuth];
 }
 
 @end

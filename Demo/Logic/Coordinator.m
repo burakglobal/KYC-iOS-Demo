@@ -277,7 +277,7 @@ static Coordinator *instance;
 
 #pragma mark - Liveness
 
-- (void)faceMatchCheck {
+- (void)faceAuth {
     
     NSString *baseUrl = kycBaseUrl;
     NSString *token = self.token;
@@ -291,11 +291,12 @@ static Coordinator *instance;
     //       see Demo/Resources/Zoom.strings for the example
     
     SSLiveness3D *liveness3D =
-    [SSLiveness3D.alloc initWithBaseUrl:baseUrl
-                            applicantId:applicantId
-                                  token:token
-                                 locale:locale
-                 tokenExpirationHandler:^(void (^ _Nonnull completionHandler)(NSString * _Nullable))
+    [SSLiveness3D.alloc initWithMode:SSLiveness3DMode_FaceAuth
+                             baseUrl:baseUrl
+                         applicantId:applicantId
+                               token:token
+                              locale:locale
+              tokenExpirationHandler:^(void (^ _Nonnull completionHandler)(NSString * _Nullable))
      {
          NSLog(@"Coordinator: token is expired");
          

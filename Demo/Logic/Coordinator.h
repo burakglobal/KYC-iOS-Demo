@@ -24,6 +24,6 @@
 
 - (void)continueCheck;
 
-- (void)faceMatchCheck;
+- (void)faceAuth;
 
 @end

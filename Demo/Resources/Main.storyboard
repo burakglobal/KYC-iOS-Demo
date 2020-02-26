@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W93-Li-Onu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W93-Li-Onu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="400" axis="vertical" distribution="equalSpacing" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-sx-iGP">
-                                <rect key="frame" x="20" y="611" width="374" height="244"/>
+                                <rect key="frame" x="20" y="537" width="374" height="318"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnp-0w-KLw">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
@@ -54,7 +54,7 @@ log in to continue</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ZQT-VA-g4p">
-                                        <rect key="frame" x="0.0" y="112" width="374" height="132"/>
+                                        <rect key="frame" x="0.0" y="112" width="374" height="206"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-ce-f4m" customClass="RoundTextField">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
@@ -71,13 +71,13 @@ log in to continue</string>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-HZ-qCD">
-                                                <rect key="frame" x="0.0" y="58" width="374" height="74"/>
+                                                <rect key="frame" x="0.0" y="58" width="374" height="148"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epa-Zz-aNM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="74"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="148"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hep-Tr-Kfm" customClass="RoundButton">
-                                                                <rect key="frame" x="-7" y="0.0" width="388" height="74"/>
+                                                                <rect key="frame" x="-7" y="0.0" width="388" height="148"/>
                                                                 <state key="normal" title="Log in" backgroundImage="buttonBackground">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
@@ -144,7 +144,7 @@ log in to continue</string>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="400" axis="vertical" distribution="equalSpacing" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="TbW-EK-yKB">
-                                <rect key="frame" x="20" y="494" width="374" height="361"/>
+                                <rect key="frame" x="20" y="272" width="374" height="583"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The fastest way to onboard your customers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWW-Pd-bXP">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
@@ -153,7 +153,7 @@ log in to continue</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jq5-xg-Jyz">
-                                        <rect key="frame" x="0.0" y="112" width="374" height="249"/>
+                                        <rect key="frame" x="0.0" y="112" width="374" height="471"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-NF-aCS" customClass="RoundTextField">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
@@ -162,17 +162,17 @@ log in to continue</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                                 <connections>
-                                                    <action selector="selectLanguage" destination="OdJ-eb-zg9" eventType="touchUpInside" id="CXB-a1-HBm"/>
+                                                    <action selector="selectLanguage:" destination="OdJ-eb-zg9" eventType="touchUpInside" id="DDR-5X-rDu"/>
                                                 </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K4q-Az-Xaz">
-                                                <rect key="frame" x="0.0" y="29" width="374" height="220"/>
+                                                <rect key="frame" x="0.0" y="29" width="374" height="442"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="va2-cP-ZPl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="74"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="148"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSh-2q-ipN" customClass="RoundButton">
-                                                                <rect key="frame" x="-7" y="0.0" width="388" height="74"/>
+                                                                <rect key="frame" x="-7" y="0.0" width="388" height="148"/>
                                                                 <state key="normal" title="Start new check" backgroundImage="buttonBackground">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
@@ -190,10 +190,10 @@ log in to continue</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gh-Kv-Bv2">
-                                                        <rect key="frame" x="0.0" y="73" width="374" height="74"/>
+                                                        <rect key="frame" x="0.0" y="147" width="374" height="148"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3f-w1-2ov" customClass="RoundButton">
-                                                                <rect key="frame" x="-7" y="0.0" width="388" height="74"/>
+                                                                <rect key="frame" x="-7" y="0.0" width="388" height="148"/>
                                                                 <state key="normal" title="Continue with existing" backgroundImage="buttonBackground">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
@@ -211,15 +211,15 @@ log in to continue</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-XO-Wr1">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="74"/>
+                                                        <rect key="frame" x="0.0" y="294" width="374" height="148"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-TN-TAq" customClass="RoundButton">
-                                                                <rect key="frame" x="-7" y="0.0" width="388" height="74"/>
-                                                                <state key="normal" title="Face match check" backgroundImage="buttonBackground">
+                                                                <rect key="frame" x="-7" y="0.0" width="388" height="148"/>
+                                                                <state key="normal" title="Face Auth" backgroundImage="buttonBackground">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="faceMatchCheck" destination="OdJ-eb-zg9" eventType="touchUpInside" id="Hbe-Fe-Vfh"/>
+                                                                    <action selector="faceAuth" destination="OdJ-eb-zg9" eventType="touchUpInside" id="Hbe-Fe-Vfh"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -242,7 +242,7 @@ log in to continue</string>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="t5k-1e-h53">
-                                <rect key="frame" x="352" y="611" width="12" height="7"/>
+                                <rect key="frame" x="352" y="389" width="12" height="7"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -281,7 +281,7 @@ log in to continue</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="ssLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yXi-Ep-sTx">
-                                <rect key="frame" x="48" y="80" width="318" height="204.5"/>
+                                <rect key="frame" x="67" y="80" width="280" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yXi-Ep-sTx" secondAttribute="height" multiplier="14:9" id="Nx8-mS-64q"/>
                                 </constraints>
